@@ -23,8 +23,8 @@ mongoose
 //   .catch(err => console.log(err));
 
 // Usr routes
-app.use("/api/users", require("./routes/users"));
-app.use("/api/auth", require("./routes/auth"));
+//app.use("/api/users", require("./routes/users"));
+//app.use("/api/auth", require("./routes/auth"));
 
 // Catch 404 Errors and forward them to error handler
 app.use((req, res, next) => {
