@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { Drawer, Button } from "antd";
 
 import "./styles/Navbar.css";
@@ -29,7 +29,7 @@ class Navbar extends Component {
     return (
       <nav className="menuBar">
         <div className="logo">
-          <a href="">MERNApp</a>
+          <Link to="/">MERNApp</Link>
         </div>
         <div className="menuCon">
           <div className="leftMenu">

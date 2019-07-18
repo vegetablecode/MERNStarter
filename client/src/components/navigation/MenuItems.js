@@ -8,22 +8,22 @@ class MenuItems extends Component {
     return (
       <Menu mode={this.props.mode}>
         <Menu.Item key="home">
-          <Link exact to="/">
+          <Link to="/">
             Home
           </Link>
         </Menu.Item>
         <Menu.Item key="about">
-          <Link exact to="/about">
+          <Link to="/about">
             About
           </Link>
         </Menu.Item>
         <Menu.Item key="signin">
-          <Link exact to="/signin">
+          <Link to="/signin">
             Sign In
           </Link>
         </Menu.Item>
         <Menu.Item key="signup">
-          <Link exact to="/signup">
+          <Link to="/signup">
             Sign Up
           </Link>
         </Menu.Item>

@@ -3,16 +3,16 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./App.css";
 import Navbar from "./components/navigation/Navbar";
-import Contact from "./components/pages/Contact";
-import About from "./components/pages/About";
-import Landing from "./components/pages/Landing";
-import Login from "./components/pages/Login";
-import Register from "./components/pages/Register";
+import Contact from "./components/pages/static/contact/Contact";
+import About from "./components/pages/static/about/About";
+import Landing from "./components/pages/static/landing/Landing";
+import Login from "./components/pages/auth/login/Login";
+import Register from "./components/pages/auth/register/Register";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
+    <div className="App">
+      <BrowserRouter>
         <Navbar />
         <Switch>
           <Route exact path="/" component={Landing} />
@@ -21,8 +21,8 @@ function App() {
           <Route exact path="/signin" component={Login} />
           <Route exact path="/signup" component={Register} />
         </Switch>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 
