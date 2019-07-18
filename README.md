@@ -62,3 +62,18 @@ mongoose
 }
 (...)
 ```
+## File structure
+* components/
+	* app/ (your SPA goes here)
+	* navigation/
+	* pages/
+		* static/
+			* landing/
+			* contact/
+			* about/
+		* auth/
+			* login/
+			* register/
+		* app/ (navigates to main SPA component)
+* actions/
+* reducers/
