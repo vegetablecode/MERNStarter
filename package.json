@@ -4,12 +4,12 @@
   "description": "MERN stack boilerplate to quickly run new projects.",
   "main": "server.js",
   "scripts": {
-    "client-install": "yarn install --prefix client",
+    "client-install": "cd client && npm install",
     "start": "node server.js",
     "server": "nodemon server.js --ignore client",
-    "client": "yarn start --prefix client",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "heroku-postbuild": "cd client && yarn install && yarn run build"
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "Vegetablecode",
   "license": "ISC",
