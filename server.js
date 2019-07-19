@@ -22,9 +22,9 @@ mongoose
 //   .then(() => console.log("MongoDB Connected..."))
 //   .catch(err => console.log(err));
 
-// Usr routes
-//app.use("/api/users", require("./routes/users"));
-//app.use("/api/auth", require("./routes/auth"));
+// Use Routes
+app.use("/api/users", require("./routes/users"));
+app.use("/api/examples", require("./routes/examples"));
 
 // Catch 404 Errors and forward them to error handler
 app.use((req, res, next) => {
