@@ -6,12 +6,12 @@ import store from "./store";
 
 import "./App.css";
 import Navbar from "./components/navigation/Navbar";
-import Contact from "./components/pages/static/contact/Contact";
-import About from "./components/pages/static/about/About";
-import Landing from "./components/pages/static/landing/Landing";
-import Login from "./components/pages/auth/login/Login";
-import Register from "./components/pages/auth/register/Register";
+import Landing from "./components/landing/Landing";
 import Dashboard from "./components/app/Dashboard";
+import Login from "./components/login/Login";
+import Register from "./components/register/Register";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
 
 function App() {
   return (

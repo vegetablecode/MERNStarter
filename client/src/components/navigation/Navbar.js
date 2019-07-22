@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 import { Drawer, Button } from "antd";
 
-import "./styles/Navbar.css";
-import LeftMenu from "./LeftMenu";
-import RightMenu from "./RightMenu";
-import MenuItems from "./MenuItems";
+import "./Navbar.css";
+import LeftMenu from "./menus/LeftMenu";
+import RightMenu from "./menus/RightMenu";
+import MenuItems from "./menus/items/MenuItems";
 
 class Navbar extends Component {
   state = {

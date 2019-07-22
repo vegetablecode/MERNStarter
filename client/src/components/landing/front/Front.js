@@ -25,7 +25,7 @@ enquireScreen(b => {
 
 const { location } = window;
 
-export default class Landing extends React.Component {
+export default class Front extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

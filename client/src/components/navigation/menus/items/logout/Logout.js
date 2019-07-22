@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 
-import { logout } from "../../../../actions/authActions";
+import { logout } from "../../../../../actions/authActions";
 
 class Logout extends Component {
   static propTypes = {

@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Menu } from "antd";
 
-import Register from "../pages/auth/register/Register";
-import Login from "../pages/auth/login/Login";
-import Logout from "../pages/auth/logout/Logout";
+import Register from "../../../register/Register";
+import Login from "../../../login/Login";
+import Logout from "./logout/Logout";
 
 class MenuItems extends Component {
   static propTypes = {

@@ -1,25 +1,24 @@
 import React, { Component, Fragment } from "react";
 
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Modal, Form, Input, Icon, Alert } from "antd";
 
-import { login } from "../../../../actions/authActions";
-import { clearErrors } from "../../../../actions/errorActions";
+import { register } from "../../actions/authActions";
+import { clearErrors } from "../../actions/errorActions";
 
-import "./styles/Login.css";
-
-class Login extends Component {
+class Register extends Component {
   static propTypes = {
     isAuthenticated: PropTypes.bool,
     error: PropTypes.object.isRequired,
-    login: PropTypes.func.isRequired,
+    register: PropTypes.func.isRequired,
     clearErrors: PropTypes.func.isRequired
   };
 
   state = {
     modal: false,
+    name: "",
     email: "",
     password: "",
     msg: null
@@ -43,8 +42,8 @@ class Login extends Component {
   componentDidUpdate(prevProps) {
     const { error } = this.props;
     if (error !== prevProps.error) {
-      // Check for Login error
-      if (error.id === "LOGIN_FAIL") {
+      // Check for register error
+      if (error.id === "REGISTER_FAIL") {
         this.setState({
           msg: error.msg.msg
         });
@@ -55,7 +54,7 @@ class Login extends Component {
       }
     }
 
-    // If authenticated, close modal & go to shoppingList
+    // If authenticated, close modal
     if (this.state.modal) {
       if (this.props.isAuthenticated) {
         this.toggle();
@@ -66,29 +65,30 @@ class Login extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    const { email, password } = this.state;
+    const { name, email, password } = this.state;
 
     // Create user object
     const newUser = {
+      name,
       email,
       password
     };
 
-    // Attempt to login
-    this.props.login(newUser, this.props.history);
+    // Attempt to register
+    this.props.register(newUser);
   };
 
   render() {
     return (
       <Fragment>
         <Link onClick={this.toggle} to="#">
-          Login
+          Register
         </Link>
         <Modal
           visible={this.state.modal}
           onCancel={this.toggle}
           onOk={this.onSubmit}
-          title="Login"
+          title="Register"
         >
           <div>
             <Form>
@@ -104,6 +104,19 @@ class Login extends Component {
                   prefix={
                     <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
                   }
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Name"
+                  onChange={this.onChange}
+                />
+              </Form.Item>
+
+              <Form.Item validateStatus={this.state.msg ? "error" : ""}>
+                <Input
+                  prefix={
+                    <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
+                  }
                   type="email"
                   name="email"
                   id="email"
@@ -111,6 +124,7 @@ class Login extends Component {
                   onChange={this.onChange}
                 />
               </Form.Item>
+
               <Form.Item validateStatus={this.state.msg ? "error" : ""}>
                 <Input
                   prefix={
@@ -138,5 +152,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { login, clearErrors }
-)(withRouter(Login));
+  { register, clearErrors }
+)(Register);
